@@ -52,7 +52,7 @@ def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
     #pass
 
 
-def gen_set(val_in: str) -> Set:
+def gen_set(val_in: str) -> Set[str]:
     """
     Oh no some evil developer decided not to write docstrings. Maybe you can use the test cases to decipher
     what this method was supposed to do. Hey if you do, maybe you could do some good in this world by
@@ -61,6 +61,6 @@ def gen_set(val_in: str) -> Set:
     :param val_in: input string
     :return: A set of unique characters (lowercase) from the input string.
     """
-    if char for char in val_in if char.isalpha()}  # filters out non-alphabetic characters
-    #return {char for char in val_in.lower }  #returns set where characters are converted to lowercase in the input string
+    return {char.upper() for char in val_in if char.islower()} # returns a set of unique characters from the input string
+    #returns set where characters are converted to lowercase in the input string
     #pass
